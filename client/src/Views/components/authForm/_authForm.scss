@@ -1,0 +1,149 @@
+.authForm {
+  font-size: $default-font-size;
+  height: 100vh;
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+  img {
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+    transition: all 1s;
+
+    &.top {
+      opacity: 0;
+      transition: all 1s;
+    }
+  }
+  &__banner {
+    &--1 {
+      position: absolute;
+      color: $color-white;
+      width: 50rem;
+      padding: 2rem;
+      right: 30%;
+      bottom: 10%;
+      animation: moveRight 1s;
+
+      @keyframes moveRight {
+        0% {
+          right: 50%;
+        }
+        100% {
+          right: 30%;
+        }
+      }
+    }
+    &--2 {
+      position: absolute;
+      color: $color-white;
+      width: 35rem;
+      padding: 2rem;
+      left: 10%;
+      bottom: 10%;
+      animation: moveLeft 1s;
+
+      @keyframes moveLeft {
+        0% {
+          left: 35%;
+        }
+        100% {
+          left: 10%;
+        }
+      }
+    }
+  }
+  .cardForm {
+    height: 100vh;
+    background-color: $color-white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    transition: all 0.5s linear;
+    @include respond(tab-land) {
+      // width < 1200?
+      width: 35vw;
+    }
+    @include respond(tab-port) {
+      // width < 900?
+      width: 100%;
+      background-color: transparent;
+    }
+    @include respond(big-desktop) {
+      width: 25vw;
+    }
+
+    &.hide-login {
+      transform: translateX(-100%);
+      transition: all 0.5s linear;
+    }
+    &.hide-signup {
+      transform: translateX(100%);
+      transition: all 0.5s linear;
+    }
+
+    &.card_left {
+      left: 0;
+    }
+    &.card_right {
+      right: 0;
+    }
+
+    #btn {
+      color: white;
+      padding: 2rem 1rem;
+      background-color: $color-purple-dark;
+      border-radius: 50%;
+      border: none;
+    }
+  }
+  &__form {
+    position: relative;
+    border: 1px solid grey;
+    border-radius: 1rem;
+    text-align: center;
+
+    padding: 2rem;
+    background-color: $color-white;
+
+    &--title {
+      color: $color-purple-dark;
+      text-transform: uppercase;
+      padding: 2rem;
+    }
+    &--section {
+      margin-bottom: 1rem;
+
+      label {
+        display: block;
+        text-align: start;
+        padding-left: 1rem;
+        font-weight: 600;
+      }
+      input {
+        width: 100%;
+        padding: 1rem;
+        border-radius: 1rem;
+        border: 1px solid grey;
+        &:active,
+        &:focus {
+          outline: none;
+        }
+      }
+    }
+
+    input[type="submit"] {
+      color: white;
+      padding: 1rem 3rem;
+      background-color: $color-purple-dark;
+      border-radius: 1rem;
+      border: none;
+
+      &:active,
+      &:focus {
+        outline: none;
+      }
+    }
+  }
+}

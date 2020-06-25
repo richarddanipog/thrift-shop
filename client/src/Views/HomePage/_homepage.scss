@@ -1,0 +1,63 @@
+.homepage {
+  &__content {
+    font-size: $default-font-size;
+    position: relative;
+    &--img1 {
+      transform-style: preserve-3d;
+      width: 13vw;
+      position: absolute;
+      top: 10%;
+      right: 8%;
+      // animation: MoveUpDown 3s linear infinite;
+      // @keyframes MoveUpDown {
+      //   0%,
+      //   100% {
+      //     top: 10%;
+      //   }
+      //   50% {
+      //     top: 20%;
+      //   }
+      // }
+    }
+    &--img2 {
+      transform-style: preserve-3d;
+      width: 17vw;
+      position: absolute;
+      top: 10%;
+      left: 8%;
+    }
+    display: flex;
+    justify-content: center;
+    padding: 5rem;
+    p {
+      width: 50%;
+      float: left;
+    }
+  }
+  &__toShop {
+    margin-top: 5rem;
+    height: 60vh;
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    h1 {
+      font-size: $default-font-size + 2rem;
+      float: left;
+      color: $color-white;
+      margin-bottom: 2rem;
+      font-weight: 700;
+    }
+    label {
+      font-size: $default-font-size;
+      color: $color-white;
+      background-color: #000;
+      padding: 0.7rem 1.5rem;
+      border-radius: 1rem;
+      cursor: pointer;
+    }
+  }
+}

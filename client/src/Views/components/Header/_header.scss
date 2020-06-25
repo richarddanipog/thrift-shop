@@ -1,0 +1,42 @@
+.header {
+  position: fixed;
+  font-size: $default-font-size;
+  z-index: 999;
+  color: $color-white;
+  width: 100%;
+
+  #header-nav {
+    border-bottom: 2px solid;
+    svg {
+      fill: white;
+    }
+  }
+  .navbar {
+    font-size: $default-font-size;
+    &-nav {
+      &__link {
+        cursor: pointer;
+
+        &:not(:last-child) {
+          margin-right: 2.5rem;
+        }
+        a {
+          color: $color-white;
+          text-decoration: none;
+        }
+
+        &::after {
+          content: "";
+          display: block;
+          width: 0;
+          height: 0.2rem;
+          background: $color-white;
+          transition: width 0.3s;
+        }
+        &:hover::after {
+          width: 100%;
+        }
+      }
+    }
+  }
+}

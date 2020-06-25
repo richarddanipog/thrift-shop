@@ -1,0 +1,41 @@
+const express = require("express");
+const path = require("path");
+const cookieParser = require("cookie-parser");
+const logger = require("morgan");
+const mongoose = require("mongoose");
+const cors = require("cors");
+
+const indexRouter = require("./routes/index");
+const usersRouter = require("./routes/users");
+const productsRouter = require("./routes/products");
+
+const app = express();
+
+// Connectiong to mongoDb
+const mongoUri =
+  "mongodb+srv://admin:r9550268@cluster0-yiecs.mongodb.net/Ecom-store?retryWrites=true&w=majority";
+mongoose.connect(mongoUri, {
+  useNewUrlParser: true,
+  useCreateIndex: true,
+  useUnifiedTopology: true,
+});
+mongoose.connection.on("connected", () => {
+  console.log("Connected to mongo instance");
+});
+mongoose.connection.on("error", (err) => {
+  console.error("Error connecting to mongo", err);
+});
+
+app.use(logger("dev"));
+
+app.use(cors({ credentials: true, origin: "http://localhost:3000" }));
+app.use(express.json());
+app.use(express.urlencoded({ extended: false }));
+app.use(cookieParser());
+app.use(express.static(path.join(__dirname, "public")));
+
+app.use("/", indexRouter);
+app.use("/users", usersRouter);
+app.use("/products", productsRouter);
+
+module.exports = app;

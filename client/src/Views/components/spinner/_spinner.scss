@@ -1,0 +1,72 @@
+.load-3 {
+  .line {
+    display: inline-block;
+    width: 1.5rem;
+    height: 1.5rem;
+    border-radius: 1.5rem;
+    background-color: $color-purple-dark;
+    &:nth-last-child(1) {
+      animation: loadingC 0.6s 0.1s linear infinite;
+    }
+    &:nth-last-child(2) {
+      animation: loadingC 0.6s 0.2s linear infinite;
+    }
+    &:nth-last-child(3) {
+      animation: loadingC 0.6s 0.3s linear infinite;
+    }
+  }
+}
+
+@keyframes loadingC {
+  0% {
+    transform: translate(0, 0);
+  }
+  50% {
+    transform: translate(0, 1.5rem);
+  }
+  100% {
+    transform: translate(0, 0);
+  }
+}
+// LOADING SCREEN COMPONENT
+.content {
+  min-height: 100vh;
+  position: relative;
+  width: 100%;
+}
+
+.loader {
+  position: absolute;
+  text-align: center;
+  width: 100%;
+  top: 50%;
+  margin-top: -1em;
+
+  &_letter {
+    text-transform: uppercase;
+    color: #000;
+    font-family: "Helvetica", sans-serif;
+    font-weight: bold;
+    padding: 0 0.2em;
+    font-size: 5em;
+    line-height: 1;
+    position: relative;
+    display: inline-block;
+    animation: bounce 0.5s cubic-bezier(0.165, 0.84, 0.44, 1) infinite alternate;
+
+    @for $i from 0 through 6 {
+      &:nth-child(#{$i + 1}) {
+        animation-delay: $i * 0.05s;
+      }
+    }
+  }
+}
+
+@keyframes bounce {
+  0% {
+    transform: translateY(0px);
+  }
+  100% {
+    transform: translateY(-1em);
+  }
+}

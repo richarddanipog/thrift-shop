@@ -1,0 +1,53 @@
+.footer {
+  font-size: $default-font-size;
+  color: $color-white;
+  background-color: black;
+  position: relative;
+  z-index: 1;
+  height: 10vh;
+  padding: 2rem 4rem;
+
+  &__list {
+    display: flex;
+    flex-wrap: wrap;
+    &-link {
+      list-style: none;
+      cursor: pointer;
+      &:not(:last-child) {
+        margin-right: 3rem;
+      }
+      &::after {
+        content: "";
+        display: block;
+        width: 0;
+        height: 0.2rem;
+        background: $color-white;
+        transition: width 0.3s;
+      }
+      &:hover::after {
+        width: 100%;
+      }
+    }
+  }
+  &__social {
+    color: $color-white;
+    flex-wrap: wrap;
+    i {
+      cursor: pointer;
+      &:not(:last-child) {
+        margin-right: 3rem;
+        &::after {
+          content: "";
+          display: block;
+          width: 0;
+          height: 0.2rem;
+          background: $color-white;
+          transition: width 0.3s;
+        }
+        &:hover::after {
+          width: 100%;
+        }
+      }
+    }
+  }
+}

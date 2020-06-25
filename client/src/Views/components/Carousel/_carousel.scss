@@ -1,0 +1,65 @@
+.carouselWrapper {
+  margin-top: 1rem;
+  .carousel-control-next,
+  .carousel-control-prev {
+    background-color: #000;
+    width: 2%;
+    height: 30%;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+}
+#carouselHomePage {
+  .carousel {
+    &-item {
+      height: 95vh;
+      width: 100%;
+      background-attachment: fixed;
+      background-size: cover;
+      background-position: top;
+
+      &__wrapper {
+        background-color: rgba(0, 0, 0, 0.08);
+        height: 100%;
+      }
+    }
+    &__title {
+      text-align: center;
+      position: absolute;
+      bottom: 20%;
+      left: 50%;
+      transform: translateX(-50%);
+      color: $color-white;
+      z-index: 1;
+      p {
+        font-size: $default-font-size;
+        font-weight: 600;
+      }
+      h1 {
+        font-size: 4rem;
+        letter-spacing: 0.1rem;
+        font-weight: 600;
+        margin-bottom: 1rem;
+      }
+    }
+  }
+}
+
+#carouselProducts {
+  width: 100%;
+}
+.carouselProducts {
+  &__card {
+    span {
+      font-size: $default-font-size - 0.2rem;
+      float: left;
+    }
+    div {
+      image-rendering: crisp-edges;
+      height: 25vh;
+      width: 100%;
+      background-size: cover;
+      background-position: center;
+    }
+  }
+}
