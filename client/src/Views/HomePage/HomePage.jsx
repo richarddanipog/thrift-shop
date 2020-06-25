@@ -73,7 +73,7 @@ const HomePage = ({ products, getProducts, addQuery }) => {
         style={{ backgroundImage: "url(../../../images/models.jpg)" }}
       >
         <h1>The One-stop destination for buying, selling and exploring.</h1>
-        <Link to="/gallery">
+        <Link to="/gallery" onClick={() => window.scrollTo(0, 0)}>
           <label>Shop</label>
         </Link>
       </div>

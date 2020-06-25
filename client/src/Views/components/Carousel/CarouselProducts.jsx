@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 const CarouselProducts = ({ products, title, carouselId }) => {
   const singleProduct = (p, i) => {
     return (
-      <div className="col-2" key={i}>
+      <div className="col-lg-2 " key={i}>
         <Link
           to={`/product/${p._id}`}
           style={{ color: "#000", textDecoration: "none" }}
