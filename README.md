@@ -1,4 +1,4 @@
-# thrift-shop
+# Thrift-shop
 
 I create a Furniture store website - Using React js, Axios, Redux, Nodejs Express server, Db mongoDB mongoose.
 
