@@ -513,6 +513,10 @@
   border-radius: 1rem;
   cursor: pointer;
 }
+.homepage__about {
+  font-size: 1.6rem;
+  padding: 2rem;
+}
 
 .shop {
   font-size: 1.6rem;

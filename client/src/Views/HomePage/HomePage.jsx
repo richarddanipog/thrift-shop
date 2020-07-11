@@ -58,15 +58,22 @@ const HomePage = ({ products, getProducts, addQuery }) => {
             onClickBanner={() => addQuery({ gender: "women" })}
           />
           <Banner url={"../../images/call.jpg"} gender="View All" colNum="4" />
-          <Banner
-            url={"../../images/cshoes.jpg"}
-            gender="Shoes"
-            colNum="12"
-            text="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
-            onClickBanner={() => addQuery({ category: "shoes" })}
-          />
         </div>
       </section>
+
+      <div className="homepage__about container text-center">
+        <h2>About Us</h2>
+        <strong>We aren't typical thrift store.</strong>
+        <br />
+        We’re the world’s largest online secondhand shopping destination with
+        thousands of like-new styles from your favorite brands at up to 90% off
+        estimated retail. We make sure every single one of the 15K new arrivals
+        we add to the site every day is 100% authentic and in such good shape
+        anyone could mistake them as new. No knockoffs here—just knockoff
+        prices. Find high-quality used women’s clothing and used children’s
+        clothing from fashionable closets just like yours. Specially curated by
+        our style experts.
+      </div>
 
       <div
         className="homepage__toShop"
